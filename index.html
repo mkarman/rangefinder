@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="RangeFinder connects UxS engineers and flight testers with certified test ranges supporting air, ground, surface, and subsurface unmanned systems operations." />
+  <title>RangeFinder — UxS Test Range Network</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <!-- ===== NAVIGATION ===== -->
+  <header class="navbar" id="navbar">
+    <div class="navbar__inner">
+      <a href="index.html" class="navbar__logo" aria-label="RangeFinder Home">
+        <div class="navbar__logo-icon" aria-hidden="true">🎯</div>
+        <span class="navbar__logo-text">Range<span>Finder</span></span>
+      </a>
+
+      <nav class="navbar__nav" aria-label="Primary navigation">
+        <a href="#about" class="navbar__link">About</a>
+        <a href="#domains" class="navbar__link">Domains</a>
+        <a href="#how-it-works" class="navbar__link">How It Works</a>
+        <a href="#contact" class="navbar__link">Contact</a>
+      </nav>
+
+      <a href="request-range.html" class="btn btn--primary navbar__cta">Request Access</a>
+
+      <button class="navbar__hamburger" id="hamburger" aria-label="Toggle mobile menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+
+    <!-- Mobile nav -->
+    <nav class="navbar__mobile" id="mobile-nav" aria-label="Mobile navigation">
+      <a href="#about" class="navbar__link">About</a>
+      <a href="#domains" class="navbar__link">Domains</a>
+      <a href="#how-it-works" class="navbar__link">How It Works</a>
+      <a href="#contact" class="navbar__link">Contact</a>
+      <a href="request-range.html" class="btn btn--primary">Request Range Access</a>
+      <a href="become-affiliate.html" class="btn btn--secondary mt-1">Become an Affiliate</a>
+    </nav>
+  </header>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero" aria-label="Hero">
+    <div class="hero__bg" role="img" aria-label="Aerial drone in flight over test range landscape"></div>
+
+    <div class="hero__content">
+      <div class="hero__badge">
+        <span>UxS Range Network</span>
+      </div>
+
+      <h1 class="hero__title">
+        Connect Your Mission<br />
+        to the <span>Right Range</span>
+      </h1>
+
+      <p class="hero__subtitle">
+        RangeFinder is the premier network linking unmanned systems engineers and flight testers
+        with certified test ranges across air, ground, surface, and subsurface domains.
+      </p>
+
+      <div class="hero__actions">
+        <a href="request-range.html" class="btn btn--primary btn--lg">
+          🛩️ Request Range Access
+        </a>
+        <a href="become-affiliate.html" class="btn btn--secondary btn--lg">
+          🏢 Become an Affiliate
+        </a>
+      </div>
+    </div>
+
+    <div class="hero__scroll" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="6 9 12 15 18 9"></polyline>
+      </svg>
+      <span>Scroll</span>
+    </div>
+  </section>
+
+  <!-- ===== DOMAIN STRIP ===== -->
+  <section class="domains" id="domains" aria-label="Supported UxS domains">
+    <div class="domains__grid">
+      <div class="domain-card">
+        <div class="domain-card__icon" aria-hidden="true">✈️</div>
+        <div>
+          <div class="domain-card__label">UAS — Aerial</div>
+          <div class="domain-card__sub">Fixed-wing, rotary, VTOL</div>
+        </div>
+      </div>
+      <div class="domain-card">
+        <div class="domain-card__icon" aria-hidden="true">🚗</div>
+        <div>
+          <div class="domain-card__label">UGS — Ground</div>
+          <div class="domain-card__sub">Wheeled, tracked, legged</div>
+        </div>
+      </div>
+      <div class="domain-card">
+        <div class="domain-card__icon" aria-hidden="true">🚢</div>
+        <div>
+          <div class="domain-card__label">USV — Surface</div>
+          <div class="domain-card__sub">Autonomous surface vessels</div>
+        </div>
+      </div>
+      <div class="domain-card">
+        <div class="domain-card__icon" aria-hidden="true">🤿</div>
+        <div>
+          <div class="domain-card__label">UUV — Subsurface</div>
+          <div class="domain-card__sub">Underwater vehicles &amp; gliders</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA CARDS ===== -->
+  <section class="cta-section" id="how-it-works" aria-label="Access options">
+    <div class="container">
+      <div class="cta-section__header">
+        <h2>How Would You Like to Proceed?</h2>
+        <p>Whether you need a range for your next test event or you operate a range looking for partners, we have a path for you.</p>
+      </div>
+
+      <div class="cta-grid">
+
+        <!-- Card 1: Request Range Access -->
+        <article class="cta-card" aria-label="Request Range Access">
+          <div class="cta-card__icon" aria-hidden="true">🛩️</div>
+          <h3 class="cta-card__title">Request Range Access</h3>
+          <p class="cta-card__desc">
+            Engineers, program offices, and flight test teams can submit a range access request.
+            We'll match your mission requirements with available affiliated ranges.
+          </p>
+          <ul class="cta-card__features" aria-label="Included features">
+            <li class="cta-card__feature">Multi-domain range matching (Air, Ground, Sea, Sub)</li>
+            <li class="cta-card__feature">Airspace &amp; waterspace coordination support</li>
+            <li class="cta-card__feature">Safety &amp; regulatory compliance guidance</li>
+            <li class="cta-card__feature">Scheduling and logistics facilitation</li>
+          </ul>
+          <a href="request-range.html" class="btn btn--primary">
+            Submit a Request →
+          </a>
+        </article>
+
+        <!-- Card 2: Become an Affiliate -->
+        <article class="cta-card cta-card--affiliate" aria-label="Become an Affiliate Range">
+          <div class="cta-card__icon" aria-hidden="true">🏢</div>
+          <h3 class="cta-card__title">Become an Affiliate</h3>
+          <p class="cta-card__desc">
+            Range operators, test facilities, and government installations can join the RangeFinder
+            network to connect with qualified UxS test teams seeking your capabilities.
+          </p>
+          <ul class="cta-card__features" aria-label="Included features">
+            <li class="cta-card__feature">Listing in the RangeFinder affiliate directory</li>
+            <li class="cta-card__feature">Inbound test team referrals &amp; leads</li>
+            <li class="cta-card__feature">Range capability profile management</li>
+            <li class="cta-card__feature">Priority matching for specialized domains</li>
+          </ul>
+          <a href="become-affiliate.html" class="btn btn--outline">
+            Apply to Join →
+          </a>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== INFO STRIP ===== -->
+  <section class="info-strip" id="about" aria-label="About RangeFinder">
+    <div class="info-strip__inner">
+      <div class="info-strip__text">
+        <h2>Built for the UxS Test &amp; Evaluation Community</h2>
+        <p>
+          RangeFinder was created by test professionals who understand the friction of finding
+          suitable ranges for unmanned systems operations. From FAA-coordinated airspace to
+          deep-water UUV test corridors, our affiliate network spans the full spectrum of
+          UxS test environments.
+        </p>
+        <p>
+          We streamline the connection between test teams and range operators — reducing
+          lead times, improving safety coordination, and expanding access to specialized
+          test infrastructure across the country.
+        </p>
+        <a href="request-range.html" class="btn btn--primary mt-2">Get Started Today</a>
+      </div>
+
+      <div class="info-strip__stats" aria-label="Network statistics">
+        <div class="stat-box">
+          <div class="stat-box__number">40+</div>
+          <div class="stat-box__label">Affiliate Ranges</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-box__number">4</div>
+          <div class="stat-box__label">UxS Domains</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-box__number">32</div>
+          <div class="stat-box__label">States Covered</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-box__number">500+</div>
+          <div class="stat-box__label">Test Events Supported</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer" id="contact" aria-label="Site footer">
+    <div class="footer__inner">
+      <div class="footer__grid">
+
+        <div class="footer__brand">
+          <a href="index.html" class="navbar__logo" aria-label="RangeFinder Home">
+            <div class="navbar__logo-icon" aria-hidden="true">🎯</div>
+            <span class="navbar__logo-text">Range<span>Finder</span></span>
+          </a>
+          <p>Connecting unmanned systems engineers and flight testers with the ranges they need — across all domains.</p>
+        </div>
+
+        <div class="footer__col">
+          <h4>Platform</h4>
+          <ul>
+            <li><a href="request-range.html">Request Range Access</a></li>
+            <li><a href="become-affiliate.html">Become an Affiliate</a></li>
+            <li><a href="#how-it-works">How It Works</a></li>
+            <li><a href="#domains">Supported Domains</a></li>
+          </ul>
+        </div>
+
+        <div class="footer__col">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="#">FAA UAS Resources</a></li>
+            <li><a href="#">DoD Test &amp; Eval Policy</a></li>
+            <li><a href="#">Range Safety Standards</a></li>
+            <li><a href="#">UxS Glossary</a></li>
+          </ul>
+        </div>
+
+        <div class="footer__col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="mailto:info@rangefinder.aero">info@rangefinder.aero</a></li>
+            <li><a href="#">Support Portal</a></li>
+            <li><a href="#">Media Inquiries</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer__bottom">
+        <p class="footer__copy">&copy; 2025 RangeFinder Network. All rights reserved.</p>
+        <div class="footer__legal">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Use</a>
+          <a href="#">Accessibility</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

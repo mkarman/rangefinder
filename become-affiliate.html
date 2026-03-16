@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Join the RangeFinder affiliate network. Range operators and test facilities can list their capabilities and connect with qualified UxS test teams." />
+  <title>Become an Affiliate — RangeFinder</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <!-- ===== NAVIGATION ===== -->
+  <header class="navbar" id="navbar">
+    <div class="navbar__inner">
+      <a href="index.html" class="navbar__logo" aria-label="RangeFinder Home">
+        <div class="navbar__logo-icon" aria-hidden="true">🎯</div>
+        <span class="navbar__logo-text">Range<span>Finder</span></span>
+      </a>
+
+      <nav class="navbar__nav" aria-label="Primary navigation">
+        <a href="index.html#about" class="navbar__link">About</a>
+        <a href="index.html#domains" class="navbar__link">Domains</a>
+        <a href="index.html#how-it-works" class="navbar__link">How It Works</a>
+        <a href="index.html#contact" class="navbar__link">Contact</a>
+      </nav>
+
+      <a href="request-range.html" class="btn btn--primary navbar__cta">Request Range Access</a>
+
+      <button class="navbar__hamburger" id="hamburger" aria-label="Toggle mobile menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+
+    <nav class="navbar__mobile" id="mobile-nav" aria-label="Mobile navigation">
+      <a href="index.html#about" class="navbar__link">About</a>
+      <a href="index.html#domains" class="navbar__link">Domains</a>
+      <a href="index.html#how-it-works" class="navbar__link">How It Works</a>
+      <a href="index.html#contact" class="navbar__link">Contact</a>
+      <a href="request-range.html" class="btn btn--primary mt-1">Request Range Access</a>
+    </nav>
+  </header>
+
+  <!-- ===== PAGE HERO ===== -->
+  <section class="page-hero page-hero--affiliate" aria-label="Page header">
+    <div class="page-hero__breadcrumb">
+      <a href="index.html">Home</a>
+      <span aria-hidden="true">›</span>
+      <span>Become an Affiliate</span>
+    </div>
+    <h1>Become an Affiliate Range</h1>
+    <p>List your range capabilities in the RangeFinder network and connect with qualified UxS test teams seeking your infrastructure.</p>
+  </section>
+
+  <!-- ===== FORM SECTION ===== -->
+  <section class="form-section" aria-label="Affiliate application form">
+    <div class="form-layout">
+
+      <!-- ===== MAIN FORM ===== -->
+      <main>
+        <div class="form-card">
+
+          <div class="form-card__header">
+            <h2>Affiliate Application</h2>
+            <p>Complete all required fields. Our partnerships team will review your application and respond within 5 business days.</p>
+          </div>
+
+          <!-- Step indicator -->
+          <div class="form-steps" role="list" aria-label="Form sections">
+            <div class="form-step active" role="listitem">
+              <div class="form-step__dot" aria-current="step">1</div>
+              <span class="form-step__label">Organization</span>
+            </div>
+            <div class="form-step__line" aria-hidden="true"></div>
+            <div class="form-step" role="listitem">
+              <div class="form-step__dot">2</div>
+              <span class="form-step__label">Range Info</span>
+            </div>
+            <div class="form-step__line" aria-hidden="true"></div>
+            <div class="form-step" role="listitem">
+              <div class="form-step__dot">3</div>
+              <span class="form-step__label">Capabilities</span>
+            </div>
+            <div class="form-step__line" aria-hidden="true"></div>
+            <div class="form-step" role="listitem">
+              <div class="form-step__dot">4</div>
+              <span class="form-step__label">Review</span>
+            </div>
+          </div>
+
+          <div class="form-notice">
+            <strong>Affiliate Program:</strong> Membership in the RangeFinder network is subject to a capability review
+            and affiliate agreement. There is no cost to apply. Approved affiliates receive inbound test team referrals
+            and a listing in our searchable range directory.
+          </div>
+
+          <form id="affiliate-form" novalidate>
+
+            <!-- ── SECTION 1: Organization & Contact ── -->
+            <div class="form-section-title">Section 1 — Organization &amp; Contact</div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="org-name">
+                  Organization / Company Name <span class="required" aria-label="required">*</span>
+                </label>
+                <input
+                  class="form-input"
+                  type="text"
+                  id="org-name"
+                  name="org_name"
+                  placeholder="e.g., Desert Sky Test Center LLC"
+                  required
+                  autocomplete="organization"
+                />
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="org-type">
+                  Organization Type <span class="required" aria-label="required">*</span>
+                </label>
+                <select class="form-select" id="org-type" name="org_type" required>
+                  <option value="" disabled selected>Select type…</option>
+                  <option value="commercial">Commercial Range Operator</option>
+                  <option value="dod">DoD / Military Installation</option>
+                  <option value="federal">Federal / Government Facility</option>
+                  <option value="academic">University / Research Institution</option>
+                  <option value="state">State / Municipal Authority</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="contact-name">
+                  Primary Contact Name <span class="required" aria-label="required">*</span>
+                </label>
+                <input
+                  class="form-input"
+                  type="text"
+                  id="contact-name"
+                  name="contact_name"
+                  placeholder="First Last"
+                  required
+                  autocomplete="name"
+                />
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="contact-title">
+                  Title / Role <span class="optional">(optional)</span>
+                </label>
+                <input
+                  class="form-input"
+                  type="text"
+                  id="contact-title"
+                  name="contact_title"
+                  placeholder="e.g., Range Director, Business Development"
+                  autocomplete="organization-title"
+                />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="contact-email">
+                  Email Address <span class="required" aria-label="required">*</span>
+                </label>
+                <input
+                  class="form-input"
+                  type="email"
+                  id="contact-email"
+                  name="contact_email"
+                  placeholder="you@organization.com"
+                  required
+                  autocomplete="email"
+                />
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="contact-phone">
+                  Phone Number <span class="required" aria-label="required">*</span>
+                </label>
+                <input
+                  class="form-input"
+                  type="tel"
+                  id="contact-phone"
+                  name="contact_phone"
+                  placeholder="+1 (555) 000-0000"
+                  required
+                  autocomplete="tel"
+                />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="website">
+                Organization Website <span class="optional">(optional)</span>
+              </label>
+              <input
+                class="form-input"
+                type="url"
+                id="website"
+                name="website"
+                placeholder="https://www.yourrange.com"
+                autocomplete="url"
+              />
+            </div>
+
+            <!-- ── SECTION 2: Range Information ── -->
+            <div class="form-section-title">Section 2 — Range Information</div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="range-name">
+                  Range / Facility Name <span class="required" aria-label="required">*</span>
+                </label>
+                <input
+                  class="form-input"
+                  type="text"
+                  id="range-name"
+                  name="range_name"
+                  placeholder="e.g., Mojave Air &amp; Space Port Test Range"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="range-state">
+                  State / Territory <span class="required" aria-label="required">*</span>
+                </label>
+                <select class="form-select" id="range-state" name="range_state" required>
+                  <option value="" disabled selected>Select state…</option>
+                  <option>Alabama</option><option>Alaska</option><option>Arizona</option>
+                  <option>Arkansas</option><option>California</option><option>Colorado</option>
+                  <option>Connecticut</option><option>Delaware</option><option>Florida</option>
+                  <option>Georgia</option><option>Hawaii</option><option>Idaho</option>
+                  <option>Illinois</option><option>Indiana</option><option>Iowa</option>
+                  <option>Kansas</option><option>Kentucky</option><option>Louisiana</option>
+                  <option>Maine</option><option>Maryland</option><option>Massachusetts</option>
+                  <option>Michigan</option><option>Minnesota</option><option>Mississippi</option>
+                  <option>Missouri</option><option>Montana</option><option>Nebraska</option>
+                  <option>Nevada</option><option>New Hampshire</option><option>New Jersey</option>
+                  <option>New Mexico</option><option>New York</option><option>North Carolina</option>
+                  <option>North Dakota</option><option>Ohio</option><option>Oklahoma</option>
+                  <option>Oregon</option><option>Pennsylvania</option><option>Rhode Island</option>
+                  <option>South Carolina</option><option>South Dakota</option><option>Tennessee</option>
+                  <option>Texas</option><option>Utah</option><option>Vermont</option>
+                  <option>Virginia</option><option>Washington</option><option>West Virginia</option>
+                  <option>Wisconsin</option><option>Wyoming</option>
+                  <option>Puerto Rico</option><option>Guam</option><option>OCONUS</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="range-location">
+                Range Location / Address <span class="optional">(optional)</span>
+              </label>
+              <input
+                class="form-input"
+                type="text"
+                id="range-location"
+                name="range_location"
+                placeholder="City, State or general area (exact address not required)"
+              />
+              <p class="form-hint">Exact coordinates or address can be provided after initial approval.</p>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="range-acreage">
+                  Approximate Range Area <span class="optional">(optional)</span>
+                </label>
+                <input
+                  class="form-input"
+                  type="text"
+                  id="range-acreage"
+                  name="range_acreage"
+                  placeholder="e.g., 5,000 acres / 200 sq nm"
+                />
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="years-operating">
+                  Years in Operation <span class="optional">(optional)</span>
+                </label>
+                <select class="form-select" id="years-operating" name="years_operating">
+                  <option value="" selected>Select…</option>
+                  <option value="new">New / Pre-operational</option>
+                  <option value="1-3">1–3 years</option>
+                  <option value="4-10">4–10 years</option>
+                  <option value="10+">10+ years</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- ── SECTION 3: Supported Domains ── -->
+            <div class="form-section-title">Section 3 — Supported UxS Domains</div>
+
+            <div class="form-group">
+              <label class="form-label">
+                Supported Domains <span class="required" aria-label="required">*</span>
+              </label>
+              <div class="check-group check-group--inline" role="group" aria-label="Supported UxS domains">
+                <label class="check-item">
+                  <input type="checkbox" name="domains" value="uas" /> ✈️ UAS (Aerial)
+                </label>
+                <label class="check-item">
+                  <input type="checkbox" name="domains" value="ugs" /> 🚗 UGS (Ground)
+                </label>
+                <label class="check-item">
+                  <input type="checkbox" name="domains" value="usv" /> 🚢 USV (Surface)
+                </label>
+                <label class="check-item">
+                  <input type="checkbox" name="domains" value="uuv" /> 🤿 UUV (Subsurface)
+                </label>
+              </div>
+            </div>
+
+            <!-- ── SECTION 4: Range Capabilities ── -->
+            <div class="form-section-title">Section 4 — Range Capabilities &amp; Infrastructure</div>
+
+            <div class="form-group">
+              <label class="form-label">
+                Airspace / Waterspace Authorizations <span class="optional">(optional)</span>
+              </label>
+              <div class="check-group" role="group" aria-label="Airspace authorizations">
+                <label class="check-item">
+                  <input type="checkbox" name="airspace" value="restricted" /> FAA Restricted Area (R-area)
+                </label>
+                <label class="check-item">
+                  <input type="checkbox" name="airspace" value="sua" /> Special Use Airspace (MOA, Warning Area)
+                </label>
+                <label class="check-item">
+                  <input type="checkbox" name="airspace" value="class-d" /> Class D / E Airspace
+                </label>
+                <label class="check-item">
+                  <input type="checkbox" name="airspace" value="bvlos-waiver" /> FAA BVLOS Waiver / Authorization
+                </label>
+                <label class="check-item">
+                  <input type="checkbox" name="airspace" value="maritime" /> Maritime / Coastal Waterspace
+                </label>
+                <label class="check-item">
+                  <input type="checkbox" name="airspace" value="inland-water" /> Inland Lake / River Test Area
+                </label>
+                <label class="check-item">
+                  <input type="checkbox" name="airspace" value="subsurface" /> Subsurface / Underwater Test Area
+                </label>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">
+                Available Infrastructure &amp; Services <span class="optional">(optional)</span>
+              </label>
+              <div class="check-group" role="group" aria-label="Available infrastructure">
+                <label class="check-item">
+                  <input type="checkbox" name="infrastructure" value="runway" /> Paved Runway / Airstrip
+                </label>
+                <label class="check-item">
+                  <input type="checkbox" name="infrastructure" value="hangar" /> Hangar / Maintenance Bay
+                </label>
+                <label class="check-item">
+                  <input type="checkbox" name="infrastructure" value="telemetry" /> Range Instrumentation &amp; Telemetry
+                </label>
+                <label class="check-item">
+                  <input type="checkbox" name="infrastructure" value="chase" /> Chase Aircraft Available
+                </label>
+                <label class="check-item">
+                  <input type="checkbox" name="infrastructure" value="fuel" /> Fuel / Charging Infrastructure
+                </label>
+                <label class="check-item">
+                  <input type="checkbox" name="infrastructure" value="comms" /> Secure Communications Facilities
+                </label>
+                <label class="check-item">
+                  <input type="checkbox" name="infrastructure" value="ew" /> Electronic Warfare / RF Emitters
+                </label>
+                <label class="check-item">
+                  <input type="checkbox" name="infrastructure" value="gps-denied" /> GPS-Denied Environment Capability
+                </label>
+                <label class="check-item">
+                  <input type="checkbox" name="infrastructure" value="lodging" /> On-site Lodging / Billeting
+                </label>
+                <label class="check-item">
+                  <input type="checkbox" name="infrastructure" value="classified" /> Classified Processing Facilities (SCIF)
+                </label>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="max-altitude">
+                  Maximum Altitude / Depth Supported <span class="optional">(optional)</span>
+                </label>
+                <input
+                  class="form-input"
+                  type="text"
+                  id="max-altitude"
+                  name="max_altitude"
+                  placeholder="e.g., FL180 AGL / 500m depth"
+                />
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="classification-level">
+                  Highest Classification Supported <span class="optional">(optional)</span>
+                </label>
+                <select class="form-select" id="classification-level" name="classification_level">
+                  <option value="" selected>Select…</option>
+                  <option value="unclassified">Unclassified only</option>
+                  <option value="cui">CUI</option>
+                  <option value="secret">Secret</option>
+                  <option value="ts">Top Secret</option>
+                  <option value="ts-sci">TS/SCI</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- ── SECTION 5: Availability & Capacity ── -->
+            <div class="form-section-title">Section 5 — Availability &amp; Capacity</div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="availability">
+                  General Availability <span class="required" aria-label="required">*</span>
+                </label>
+                <select class="form-select" id="availability" name="availability" required>
+                  <option value="" disabled selected>Select…</option>
+                  <option value="year-round">Year-round</option>
+                  <option value="seasonal">Seasonal (specify below)</option>
+                  <option value="limited">Limited / By appointment only</option>
+                  <option value="weekdays">Weekdays only</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="max-team">
+                  Max Concurrent Team Size <span class="optional">(optional)</span>
+                </label>
+                <select class="form-select" id="max-team" name="max_team">
+                  <option value="" selected>Select…</option>
+                  <option value="1-10">1–10 personnel</option>
+                  <option value="11-25">11–25 personnel</option>
+                  <option value="26-50">26–50 personnel</option>
+                  <option value="50+">50+ personnel</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="range-description">
+                Range Description &amp; Unique Capabilities <span class="required" aria-label="required">*</span>
+              </label>
+              <textarea
+                class="form-textarea"
+                id="range-description"
+                name="range_description"
+                placeholder="Describe your range's key capabilities, unique features, past test programs supported, and anything that distinguishes your facility from others…"
+                required
+                rows="5"
+              ></textarea>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="limitations">
+                Known Limitations or Restrictions <span class="optional">(optional)</span>
+              </label>
+              <textarea
+                class="form-textarea"
+                id="limitations"
+                name="limitations"
+                placeholder="Describe any known limitations such as noise ordinances, environmental restrictions, foreign national access restrictions, seasonal closures, etc."
+                rows="3"
+              ></textarea>
+            </div>
+
+            <!-- ── SECTION 6: Agreement ── -->
+            <div class="form-section-title">Section 6 — Agreement &amp; Submission</div>
+
+            <div class="form-group">
+              <label class="form-label" for="how-heard">
+                How did you hear about RangeFinder? <span class="optional">(optional)</span>
+              </label>
+              <select class="form-select" id="how-heard" name="how_heard">
+                <option value="" selected>Select…</option>
+                <option value="colleague">Colleague / Word of mouth</option>
+                <option value="conference">Conference / Trade show</option>
+                <option value="search">Web search</option>
+                <option value="social">Social media</option>
+                <option value="publication">Publication / Article</option>
+                <option value="government">Government referral</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="check-item" style="align-items:flex-start;gap:0.75rem;">
+                <input type="checkbox" name="agree_accurate" id="agree-accurate" required style="margin-top:3px;" />
+                <span style="font-size:0.88rem;color:var(--color-text-muted);line-height:1.6;">
+                  I confirm that the information provided accurately represents our range's capabilities and I am authorized
+                  to submit this application on behalf of my organization.
+                  <span class="required" aria-label="required">*</span>
+                </span>
+              </label>
+            </div>
+
+            <div class="form-group">
+              <label class="check-item" style="align-items:flex-start;gap:0.75rem;">
+                <input type="checkbox" name="agree_terms" id="agree-terms" required style="margin-top:3px;" />
+                <span style="font-size:0.88rem;color:var(--color-text-muted);line-height:1.6;">
+                  I agree to RangeFinder's <a href="#">Affiliate Terms &amp; Conditions</a> and
+                  <a href="#">Privacy Policy</a>, and I understand that approval is subject to review.
+                  <span class="required" aria-label="required">*</span>
+                </span>
+              </label>
+            </div>
+
+            <!-- Form Actions -->
+            <div class="form-actions">
+              <a href="index.html" class="btn btn--outline">← Back to Home</a>
+              <button type="submit" class="btn btn--primary btn--lg" id="submit-btn">
+                Submit Application →
+              </button>
+            </div>
+
+          </form>
+
+          <!-- Success message (hidden by default) -->
+          <div id="form-success" style="display:none;text-align:center;padding:3rem 1rem;">
+            <div style="font-size:3rem;margin-bottom:1rem;">✅</div>
+            <h3 style="color:var(--color-dark);margin-bottom:0.75rem;">Application Submitted!</h3>
+            <p style="color:var(--color-text-muted);max-width:420px;margin:0 auto 1.5rem;">
+              Thank you for applying to the RangeFinder affiliate network. Our partnerships team will review
+              your application and follow up within 5 business days.
+            </p>
+            <a href="index.html" class="btn btn--primary">Return to Home</a>
+          </div>
+
+        </div><!-- /.form-card -->
+      </main>
+
+      <!-- ===== SIDEBAR ===== -->
+      <aside class="form-sidebar" aria-label="Affiliate program information">
+
+        <div class="sidebar-card">
+          <h4>Why Join RangeFinder?</h4>
+          <ul>
+            <li>Access to a growing network of qualified UxS test teams</li>
+            <li>Inbound referrals matched to your specific capabilities</li>
+            <li>Searchable listing in the affiliate range directory</li>
+            <li>No cost to apply or maintain affiliate status</li>
+            <li>Support from our range coordination team</li>
+          </ul>
+        </div>
+
+        <div class="sidebar-card">
+          <h4>Eligibility</h4>
+          <ul>
+            <li>Established range or test facility with documented capabilities</li>
+            <li>Ability to support at least one UxS domain</li>
+            <li>Appropriate safety management system in place</li>
+            <li>Willingness to execute a RangeFinder affiliate agreement</li>
+          </ul>
+        </div>
+
+        <div class="sidebar-card">
+          <h4>Review Timeline</h4>
+          <p>Applications are reviewed within <strong>5 business days</strong>. Approved affiliates receive a capability profile setup call and onboarding package.</p>
+        </div>
+
+        <div class="sidebar-card">
+          <h4>Questions?</h4>
+          <p>Contact our partnerships team before submitting.</p>
+          <div class="sidebar-contact">
+            <a href="mailto:affiliates@rangefinder.aero">📧 affiliates@rangefinder.aero</a>
+            <a href="tel:+18005550198">📞 1-800-555-0198</a>
+          </div>
+        </div>
+
+      </aside>
+
+    </div><!-- /.form-layout -->
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer" aria-label="Site footer">
+    <div class="footer__inner">
+      <div class="footer__bottom">
+        <p class="footer__copy">&copy; 2025 RangeFinder Network. All rights reserved.</p>
+        <div class="footer__legal">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Use</a>
+          <a href="#">Accessibility</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

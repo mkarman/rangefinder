@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Submit a range access request to connect your UxS test team with a certified affiliated range that meets your mission requirements." />
+  <title>Request Range Access — RangeFinder</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <!-- ===== NAVIGATION ===== -->
+  <header class="navbar" id="navbar">
+    <div class="navbar__inner">
+      <a href="index.html" class="navbar__logo" aria-label="RangeFinder Home">
+        <div class="navbar__logo-icon" aria-hidden="true">🎯</div>
+        <span class="navbar__logo-text">Range<span>Finder</span></span>
+      </a>
+
+      <nav class="navbar__nav" aria-label="Primary navigation">
+        <a href="index.html#about" class="navbar__link">About</a>
+        <a href="index.html#domains" class="navbar__link">Domains</a>
+        <a href="index.html#how-it-works" class="navbar__link">How It Works</a>
+        <a href="index.html#contact" class="navbar__link">Contact</a>
+      </nav>
+
+      <a href="become-affiliate.html" class="btn btn--outline navbar__cta" style="border-color:rgba(168,212,240,0.5);color:#A8D4F0;">Become an Affiliate</a>
+
+      <button class="navbar__hamburger" id="hamburger" aria-label="Toggle mobile menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+
+    <nav class="navbar__mobile" id="mobile-nav" aria-label="Mobile navigation">
+      <a href="index.html#about" class="navbar__link">About</a>
+      <a href="index.html#domains" class="navbar__link">Domains</a>
+      <a href="index.html#how-it-works" class="navbar__link">How It Works</a>
+      <a href="index.html#contact" class="navbar__link">Contact</a>
+      <a href="become-affiliate.html" class="btn btn--secondary mt-1">Become an Affiliate</a>
+    </nav>
+  </header>
+
+  <!-- ===== PAGE HERO ===== -->
+  <section class="page-hero" aria-label="Page header">
+    <div class="page-hero__breadcrumb">
+      <a href="index.html">Home</a>
+      <span aria-hidden="true">›</span>
+      <span>Request Range Access</span>
+    </div>
+    <h1>Request Range Access</h1>
+    <p>Tell us about your test mission and we'll match you with affiliated ranges that meet your requirements.</p>
+  </section>
+
+  <!-- ===== FORM SECTION ===== -->
+  <section class="form-section" aria-label="Range access intake form">
+    <div class="form-layout">
+
+      <!-- ===== MAIN FORM ===== -->
+      <main>
+        <div class="form-card">
+
+          <div class="form-card__header">
+            <h2>Range Access Request</h2>
+            <p>Complete all required fields. A RangeFinder coordinator will follow up within 2 business days.</p>
+          </div>
+
+          <!-- Step indicator -->
+          <div class="form-steps" role="list" aria-label="Form sections">
+            <div class="form-step active" role="listitem">
+              <div class="form-step__dot" aria-current="step">1</div>
+              <span class="form-step__label">Organization</span>
+            </div>
+            <div class="form-step__line" aria-hidden="true"></div>
+            <div class="form-step" role="listitem">
+              <div class="form-step__dot">2</div>
+              <span class="form-step__label">Mission</span>
+            </div>
+            <div class="form-step__line" aria-hidden="true"></div>
+            <div class="form-step" role="listitem">
+              <div class="form-step__dot">3</div>
+              <span class="form-step__label">Requirements</span>
+            </div>
+            <div class="form-step__line" aria-hidden="true"></div>
+            <div class="form-step" role="listitem">
+              <div class="form-step__dot">4</div>
+              <span class="form-step__label">Review</span>
+            </div>
+          </div>
+
+          <div class="form-notice">
+            <strong>Note:</strong> This form collects preliminary information only. Submission does not guarantee range availability.
+            All requests are subject to range operator approval and applicable regulatory requirements.
+          </div>
+
+          <form id="range-request-form" novalidate>
+
+            <!-- ── SECTION 1: Organization & Contact ── -->
+            <div class="form-section-title">Section 1 — Organization &amp; Contact</div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="org-name">
+                  Organization / Company <span class="required" aria-label="required">*</span>
+                </label>
+                <input
+                  class="form-input"
+                  type="text"
+                  id="org-name"
+                  name="org_name"
+                  placeholder="e.g., Acme Aerospace LLC"
+                  required
+                  autocomplete="organization"
+                />
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="org-type">
+                  Organization Type <span class="required" aria-label="required">*</span>
+                </label>
+                <select class="form-select" id="org-type" name="org_type" required>
+                  <option value="" disabled selected>Select type…</option>
+                  <option value="commercial">Commercial / Industry</option>
+                  <option value="dod">DoD / Military</option>
+                  <option value="federal">Federal Agency (non-DoD)</option>
+                  <option value="academic">Academic / Research</option>
+                  <option value="startup">Startup / Small Business</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="contact-name">
+                  Primary Contact Name <span class="required" aria-label="required">*</span>
+                </label>
+                <input
+                  class="form-input"
+                  type="text"
+                  id="contact-name"
+                  name="contact_name"
+                  placeholder="First Last"
+                  required
+                  autocomplete="name"
+                />
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="contact-title">
+                  Title / Role <span class="optional">(optional)</span>
+                </label>
+                <input
+                  class="form-input"
+                  type="text"
+                  id="contact-title"
+                  name="contact_title"
+                  placeholder="e.g., Lead Flight Test Engineer"
+                  autocomplete="organization-title"
+                />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="contact-email">
+                  Email Address <span class="required" aria-label="required">*</span>
+                </label>
+                <input
+                  class="form-input"
+                  type="email"
+                  id="contact-email"
+                  name="contact_email"
+                  placeholder="you@organization.com"
+                  required
+                  autocomplete="email"
+                />
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="contact-phone">
+                  Phone Number <span class="optional">(optional)</span>
+                </label>
+                <input
+                  class="form-input"
+                  type="tel"
+                  id="contact-phone"
+                  name="contact_phone"
+                  placeholder="+1 (555) 000-0000"
+                  autocomplete="tel"
+                />
+              </div>
+            </div>
+
+            <!-- ── SECTION 2: UxS System & Mission ── -->
+            <div class="form-section-title">Section 2 — UxS System &amp; Mission</div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="uxs-domain">
+                  Primary UxS Domain <span class="required" aria-label="required">*</span>
+                </label>
+                <select class="form-select" id="uxs-domain" name="uxs_domain" required>
+                  <option value="" disabled selected>Select domain…</option>
+                  <option value="uas">UAS — Unmanned Aerial System</option>
+                  <option value="ugs">UGS — Unmanned Ground System</option>
+                  <option value="usv">USV — Unmanned Surface Vessel</option>
+                  <option value="uuv">UUV — Unmanned Underwater Vehicle</option>
+                  <option value="multi">Multi-Domain</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="platform-type">
+                  Platform / Vehicle Type <span class="required" aria-label="required">*</span>
+                </label>
+                <input
+                  class="form-input"
+                  type="text"
+                  id="platform-type"
+                  name="platform_type"
+                  placeholder="e.g., Fixed-wing MALE UAS, AUV glider"
+                />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="test-objectives">
+                Test Objectives <span class="required" aria-label="required">*</span>
+              </label>
+              <textarea
+                class="form-textarea"
+                id="test-objectives"
+                name="test_objectives"
+                placeholder="Briefly describe what you intend to test or demonstrate (e.g., autonomous navigation, payload integration, endurance flight, sensor characterization)…"
+                required
+                rows="4"
+              ></textarea>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">
+                Classification Level <span class="required" aria-label="required">*</span>
+              </label>
+              <div class="check-group check-group--inline" role="radiogroup" aria-label="Classification level">
+                <label class="check-item">
+                  <input type="radio" name="classification" value="unclassified" required /> Unclassified
+                </label>
+                <label class="check-item">
+                  <input type="radio" name="classification" value="cui" /> CUI
+                </label>
+                <label class="check-item">
+                  <input type="radio" name="classification" value="secret" /> Secret
+                </label>
+                <label class="check-item">
+                  <input type="radio" name="classification" value="ts" /> Top Secret
+                </label>
+              </div>
+            </div>
+
+            <!-- ── SECTION 3: Range Requirements ── -->
+            <div class="form-section-title">Section 3 — Range Requirements</div>
+
+            <div class="form-group">
+              <label class="form-label">
+                Required Range Capabilities <span class="required" aria-label="required">*</span>
+              </label>
+              <div class="check-group" role="group" aria-label="Required range capabilities">
+                <label class="check-item">
+                  <input type="checkbox" name="capabilities" value="airspace" /> Controlled / Restricted Airspace
+                </label>
+                <label class="check-item">
+                  <input type="checkbox" name="capabilities" value="bvlos" /> BVLOS Operations Authorization
+                </label>
+                <label class="check-item">
+                  <input type="checkbox" name="capabilities" value="waterspace" /> Waterspace / Maritime Test Area
+                </label>
+                <label class="check-item">
+                  <input type="checkbox" name="capabilities" value="underwater" /> Underwater / Subsurface Test Area
+                </label>
+                <label class="check-item">
+                  <input type="checkbox" name="capabilities" value="instrumentation" /> Range Instrumentation &amp; Telemetry
+                </label>
+                <label class="check-item">
+                  <input type="checkbox" name="capabilities" value="chase" /> Chase Aircraft / Safety Observer Support
+                </label>
+                <label class="check-item">
+                  <input type="checkbox" name="capabilities" value="ew" /> Electronic Warfare / RF Environment
+                </label>
+                <label class="check-item">
+                  <input type="checkbox" name="capabilities" value="gps-denied" /> GPS-Denied Environment
+                </label>
+                <label class="check-item">
+                  <input type="checkbox" name="capabilities" value="hangar" /> Hangar / Maintenance Facilities
+                </label>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="preferred-state">
+                  Preferred State / Region <span class="optional">(optional)</span>
+                </label>
+                <select class="form-select" id="preferred-state" name="preferred_state">
+                  <option value="" selected>No preference</option>
+                  <option value="northeast">Northeast</option>
+                  <option value="southeast">Southeast</option>
+                  <option value="midwest">Midwest</option>
+                  <option value="southwest">Southwest</option>
+                  <option value="west">West / Pacific</option>
+                  <option value="alaska">Alaska</option>
+                  <option value="hawaii">Hawaii / Pacific Islands</option>
+                  <option value="oconus">OCONUS</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="team-size">
+                  Estimated Team Size <span class="optional">(optional)</span>
+                </label>
+                <select class="form-select" id="team-size" name="team_size">
+                  <option value="" selected>Select…</option>
+                  <option value="1-5">1–5 personnel</option>
+                  <option value="6-15">6–15 personnel</option>
+                  <option value="16-30">16–30 personnel</option>
+                  <option value="31+">31+ personnel</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- ── SECTION 4: Scheduling ── -->
+            <div class="form-section-title">Section 4 — Scheduling &amp; Timeline</div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="date-start">
+                  Earliest Start Date <span class="required" aria-label="required">*</span>
+                </label>
+                <input
+                  class="form-input"
+                  type="date"
+                  id="date-start"
+                  name="date_start"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="date-end">
+                  Latest End Date <span class="required" aria-label="required">*</span>
+                </label>
+                <input
+                  class="form-input"
+                  type="date"
+                  id="date-end"
+                  name="date_end"
+                  required
+                />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="duration">
+                  Estimated Duration <span class="required" aria-label="required">*</span>
+                </label>
+                <select class="form-select" id="duration" name="duration" required>
+                  <option value="" disabled selected>Select…</option>
+                  <option value="half-day">Half day (≤4 hrs)</option>
+                  <option value="1-day">1 day</option>
+                  <option value="2-3-days">2–3 days</option>
+                  <option value="1-week">~1 week</option>
+                  <option value="2-weeks">~2 weeks</option>
+                  <option value="1-month">~1 month</option>
+                  <option value="ongoing">Ongoing / recurring</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="flexibility">
+                  Schedule Flexibility
+                </label>
+                <select class="form-select" id="flexibility" name="flexibility">
+                  <option value="" selected>Select…</option>
+                  <option value="fixed">Fixed — dates cannot change</option>
+                  <option value="some">Some flexibility (±1 week)</option>
+                  <option value="flexible">Flexible (±1 month)</option>
+                  <option value="very-flexible">Very flexible</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- ── SECTION 5: Additional Info ── -->
+            <div class="form-section-title">Section 5 — Additional Information</div>
+
+            <div class="form-group">
+              <label class="form-label" for="special-requirements">
+                Special Requirements or Constraints <span class="optional">(optional)</span>
+              </label>
+              <textarea
+                class="form-textarea"
+                id="special-requirements"
+                name="special_requirements"
+                placeholder="Describe any special safety requirements, hazardous materials, spectrum needs, foreign national restrictions, or other constraints the range operator should know about…"
+                rows="4"
+              ></textarea>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="how-heard">
+                How did you hear about RangeFinder? <span class="optional">(optional)</span>
+              </label>
+              <select class="form-select" id="how-heard" name="how_heard">
+                <option value="" selected>Select…</option>
+                <option value="colleague">Colleague / Word of mouth</option>
+                <option value="conference">Conference / Trade show</option>
+                <option value="search">Web search</option>
+                <option value="social">Social media</option>
+                <option value="publication">Publication / Article</option>
+                <option value="government">Government referral</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="check-item" style="align-items:flex-start;gap:0.75rem;">
+                <input type="checkbox" name="agree_terms" id="agree-terms" required style="margin-top:3px;" />
+                <span style="font-size:0.88rem;color:var(--color-text-muted);line-height:1.6;">
+                  I confirm that the information provided is accurate to the best of my knowledge and I agree to
+                  RangeFinder's <a href="#">Terms of Use</a> and <a href="#">Privacy Policy</a>.
+                  <span class="required" aria-label="required">*</span>
+                </span>
+              </label>
+            </div>
+
+            <!-- Form Actions -->
+            <div class="form-actions">
+              <a href="index.html" class="btn btn--outline">← Back to Home</a>
+              <button type="submit" class="btn btn--primary btn--lg" id="submit-btn">
+                Submit Request →
+              </button>
+            </div>
+
+          </form>
+
+          <!-- Success message (hidden by default) -->
+          <div id="form-success" style="display:none;text-align:center;padding:3rem 1rem;">
+            <div style="font-size:3rem;margin-bottom:1rem;">✅</div>
+            <h3 style="color:var(--color-dark);margin-bottom:0.75rem;">Request Submitted!</h3>
+            <p style="color:var(--color-text-muted);max-width:420px;margin:0 auto 1.5rem;">
+              Thank you. A RangeFinder coordinator will review your request and follow up within 2 business days.
+            </p>
+            <a href="index.html" class="btn btn--primary">Return to Home</a>
+          </div>
+
+        </div><!-- /.form-card -->
+      </main>
+
+      <!-- ===== SIDEBAR ===== -->
+      <aside class="form-sidebar" aria-label="Helpful information">
+
+        <div class="sidebar-card">
+          <h4>What Happens Next?</h4>
+          <ul>
+            <li>Your request is reviewed by a RangeFinder coordinator</li>
+            <li>We identify affiliated ranges matching your requirements</li>
+            <li>You receive a shortlist of candidate ranges within 2 business days</li>
+            <li>Direct introductions are made to range operators</li>
+            <li>Scheduling and coordination proceeds directly with the range</li>
+          </ul>
+        </div>
+
+        <div class="sidebar-card">
+          <h4>Supported Domains</h4>
+          <ul>
+            <li>UAS — Fixed-wing, rotary, VTOL, tethered</li>
+            <li>UGS — Wheeled, tracked, legged platforms</li>
+            <li>USV — Autonomous surface vessels</li>
+            <li>UUV — AUVs, ROVs, gliders, torpedoes</li>
+          </ul>
+        </div>
+
+        <div class="sidebar-card">
+          <h4>Need Help?</h4>
+          <p>Contact our team if you have questions before submitting.</p>
+          <div class="sidebar-contact">
+            <a href="mailto:ranges@rangefinder.aero">📧 ranges@rangefinder.aero</a>
+            <a href="tel:+18005550199">📞 1-800-555-0199</a>
+          </div>
+        </div>
+
+      </aside>
+
+    </div><!-- /.form-layout -->
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer" aria-label="Site footer">
+    <div class="footer__inner">
+      <div class="footer__bottom">
+        <p class="footer__copy">&copy; 2025 RangeFinder Network. All rights reserved.</p>
+        <div class="footer__legal">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Use</a>
+          <a href="#">Accessibility</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
