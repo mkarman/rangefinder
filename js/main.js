@@ -275,41 +275,148 @@
   }
 
   // ── Show success state ──
-  function showSuccess(form) {
+  function showSuccess(form, ref) {
     const successEl = document.getElementById('form-success');
     if (successEl) {
+      // Inject the reference ID if the element exists
+      var refEl = successEl.querySelector('.submission-ref');
+      if (refEl && ref) refEl.textContent = 'Your reference number is ' + ref + '.';
       form.style.display = 'none';
       successEl.style.display = 'block';
       successEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
     }
   }
 
-  // ── Simulate submit (no backend yet) ──
+  // ── Show server-side error banner ──
+  function showApiError(form, message) {
+    var existing = form.querySelector('.api-error-banner');
+    if (existing) existing.remove();
+    var banner = document.createElement('div');
+    banner.className = 'api-error-banner';
+    banner.setAttribute('role', 'alert');
+    banner.style.cssText = [
+      'background:#fef2f2',
+      'border:1px solid #fca5a5',
+      'border-radius:6px',
+      'color:#991b1b',
+      'font-size:0.9rem',
+      'line-height:1.5',
+      'margin-bottom:1.5rem',
+      'padding:1rem 1.25rem',
+    ].join(';');
+    banner.textContent = message || 'Something went wrong. Please try again or contact us directly.';
+    var firstSection = form.querySelector('.form-section-title');
+    if (firstSection) {
+      form.insertBefore(banner, firstSection);
+    } else {
+      form.prepend(banner);
+    }
+    banner.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
+
+  // ── Serialize form to JSON (handles multi-value checkboxes as arrays) ──
+  function serializeForm(form) {
+    var data = {};
+    var formData = new FormData(form);
+
+    // Identify checkbox field names so we always produce arrays for them
+    var checkboxNames = new Set();
+    form.querySelectorAll('input[type="checkbox"]').forEach(function (cb) {
+      if (cb.name && cb.name !== 'agree_terms' && cb.name !== 'agree_accurate') {
+        checkboxNames.add(cb.name);
+      }
+    });
+
+    // Pre-populate checkbox fields as empty arrays
+    checkboxNames.forEach(function (name) { data[name] = []; });
+
+    formData.forEach(function (value, key) {
+      if (checkboxNames.has(key)) {
+        // Accumulate checkbox values into arrays
+        data[key].push(value);
+      } else if (key !== 'agree_terms' && key !== 'agree_accurate') {
+        // Skip agreement checkboxes — server doesn't need them
+        data[key] = value;
+      }
+    });
+
+    return data;
+  }
+
+  // ── Determine API endpoint from form id ──
+  function getApiEndpoint(formId) {
+    if (formId === 'range-request-form') return '/api/range-request';
+    if (formId === 'affiliate-form')     return '/api/affiliate';
+    return null;
+  }
+
+  // ── Real async submit via fetch() ──
   function handleSubmit(e) {
     e.preventDefault();
-    const form = e.currentTarget;
-    const submitBtn = form.querySelector('#submit-btn');
+    var form      = e.currentTarget;
+    var submitBtn = form.querySelector('#submit-btn');
+    var endpoint  = getApiEndpoint(form.id);
 
-    // Run validation
+    if (!endpoint) {
+      console.error('Unknown form id:', form.id);
+      return;
+    }
+
+    // Run client-side validation first
     if (!validateForm(form)) {
-      // Scroll to first error
-      const firstError = form.querySelector('[role="alert"]');
+      var firstError = form.querySelector('[role="alert"]');
       if (firstError) {
         firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
       }
       return;
     }
 
+    // Remove any previous API error banner
+    var existing = form.querySelector('.api-error-banner');
+    if (existing) existing.remove();
+
     // Disable button and show loading state
+    var originalText = submitBtn ? submitBtn.textContent : '';
     if (submitBtn) {
       submitBtn.disabled = true;
       submitBtn.textContent = 'Submitting…';
     }
 
-    // Simulate async submission (replace with real fetch() call later)
-    setTimeout(function () {
-      showSuccess(form);
-    }, 1200);
+    var payload = serializeForm(form);
+
+    fetch(endpoint, {
+      method:  'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body:    JSON.stringify(payload),
+    })
+      .then(function (response) {
+        return response.json().then(function (body) {
+          return { status: response.status, body: body };
+        });
+      })
+      .then(function (result) {
+        if (result.status === 201 && result.body.success) {
+          showSuccess(form, result.body.ref);
+        } else {
+          // Re-enable button so user can correct and resubmit
+          if (submitBtn) {
+            submitBtn.disabled = false;
+            submitBtn.textContent = originalText;
+          }
+          var msg = result.body.errors
+            ? result.body.errors.join(' ')
+            : (result.body.error || 'Submission failed. Please check your entries and try again.');
+          showApiError(form, msg);
+        }
+      })
+      .catch(function (err) {
+        console.error('Fetch error:', err);
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.textContent = originalText;
+        }
+        showApiError(form, 'Network error — please check your connection and try again.');
+      });
   }
 
   // ── Attach to forms ──
