@@ -9,7 +9,25 @@ Thumbs.db
 
 # Logs
 *.log
+logs/
 
-# Node (if added later)
+# Node
 node_modules/
 npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment — NEVER commit real credentials
+.env
+.env.local
+.env.*.local
+
+# Docker build artifacts
+.dockerignore
+
+# AWS / CDK
+cdk.out/
+.aws/
+
+# Coverage / test output
+coverage/

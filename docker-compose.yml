@@ -1,0 +1,89 @@
+# ─────────────────────────────────────────────────────────────────────────────
+# RangeFinder — docker-compose.yml
+#
+# Local development stack. Starts three services:
+#   app      — Node.js/Express server (http://localhost:3000)
+#   db       — PostgreSQL 16          (localhost:5432)
+#   mailhog  — SMTP capture + Web UI  (http://localhost:8025)
+#
+# Usage:
+#   docker-compose up --build          # start all services
+#   docker-compose down -v             # stop and remove volumes
+#   docker-compose logs -f app         # tail app logs
+#
+# First-time setup:
+#   1. cp .env.example .env            # copy env template
+#   2. docker-compose up --build       # builds image, starts DB + Mailhog
+#      (migrations run automatically on app startup)
+#   3. Open http://localhost:3000      # RangeFinder app
+#      Open http://localhost:8025      # Mailhog — inspect submitted emails
+# ─────────────────────────────────────────────────────────────────────────────
+
+services:
+
+  # ── Application ─────────────────────────────────────────────────────────────
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: rangefinder:local
+    container_name: rangefinder_app
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      NODE_ENV: development
+      PORT: 3000
+      DATABASE_URL: postgres://rangefinder:password@db:5432/rangefinder
+      EMAIL_PROVIDER: smtp
+      SMTP_HOST: mailhog
+      SMTP_PORT: 1025
+      NOTIFY_EMAIL: karman@strategicmissionelements.com
+      SES_FROM_ADDRESS: noreply@rangefinder.aero
+    depends_on:
+      db:
+        condition: service_healthy
+      mailhog:
+        condition: service_started
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://localhost:3000/health"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 15s
+
+  # ── PostgreSQL Database ──────────────────────────────────────────────────────
+  db:
+    image: postgres:16-alpine
+    container_name: rangefinder_db
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB:       rangefinder
+      POSTGRES_USER:     rangefinder
+      POSTGRES_PASSWORD: password
+    ports:
+      - "5432:5432"          # expose for local DB tools (TablePlus, DBeaver, psql)
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U rangefinder -d rangefinder"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+      start_period: 10s
+
+  # ── Mailhog — SMTP capture for local email testing ───────────────────────────
+  # All emails sent by the app are captured here instead of being delivered.
+  # Web UI: http://localhost:8025
+  # SMTP:   localhost:1025
+  mailhog:
+    image: mailhog/mailhog:latest
+    container_name: rangefinder_mailhog
+    restart: unless-stopped
+    ports:
+      - "1025:1025"    # SMTP
+      - "8025:8025"    # Web UI
+
+volumes:
+  db_data:
+    driver: local
